@@ -59,7 +59,7 @@ module.exports = createCoreController('api::conduct.conduct', ({ strapi }) => ({
       })
       .forEach(order => orderBy.push(order))
 
-    console.log(conductWhere, attendanceWhere)
+    strapi.log.debug(conductWhere, attendanceWhere)
 
     const attendanceTable = knex('attendances')
       .select(

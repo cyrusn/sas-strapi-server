@@ -15,7 +15,7 @@ function randomText() {
 
 module.exports = {
   async clearDatabase({ strapi }) {
-    console.log('clearing database ...')
+    strapi.log.debug('clearing database ...')
     await Promise.all([
       strapi.db.query('api::student.student').deleteMany(),
       strapi.db.query('api::conduct.conduct').deleteMany(),
