@@ -35,8 +35,8 @@ module.exports = {
     await up({ strapi });
     await createAttendanceSummaryView({ strapi });
     await createConductSummaryView({ strapi });
-    const result = await updateStudent({ strapi });
-    console.log(result);
+    // const result = await updateStudent({ strapi });
+    // console.log(result);
   },
   async destroy({ strapi }) {
     console.log("destroying ...");
