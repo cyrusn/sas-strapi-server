@@ -13,4 +13,5 @@ WORKDIR /opt/app
 COPY ./ .
 RUN yarn build
 EXPOSE 1337
-CMD ["yarn", "develop"]
+# Conditional CMD: yarn start for production, yarn develop otherwise
+CMD ["sh", "-c", "if [ \"$NODE_ENV\" = \"production\" ]; then yarn start; else yarn develop; fi"]
