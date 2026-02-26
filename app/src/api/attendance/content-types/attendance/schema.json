@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regno": {
+      "type": "biginteger",
+      "unique": false,
+      "required": true
+    },
+    "schoolYear": {
+      "type": "integer",
+      "required": true
+    },
+    "term": {
+      "type": "integer",
+      "unique": false,
+      "required": true
+    },
+    "eventDate": {
+      "type": "date",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "LATE_NORMAL_AM",
+        "LATE_NORMAL_PM",
+        "LATE_HALF_DAY",
+        "ABSENT_NORMAL_AM",
+        "ABSENT_NORMAL_PM",
+        "ABSENT_HALF_DAY",
+        "ABSENT_ONLINE_LESSON",
+        "EARLY_LEAVE"
+      ],
+      "required": true
+    },
+    "isLeaveOfAbsence": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "reasonForAbsence": {
+      "type": "enumeration",
+      "enum": [
+        "SICK_LEAVE",
+        "SICK_LEAVE_WITH_MEDICAL_CERTIFICATE",
+        "PERSONAL_LEAVE",
+        "OFFICIAL_LEAVE",
+        "FUNERAL_LEAVE",
+        "VACCINATION_LEAVE",
+        "TRUANCY",
+        "OTHERS"
+      ]
+    },
+    "recordedBy": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

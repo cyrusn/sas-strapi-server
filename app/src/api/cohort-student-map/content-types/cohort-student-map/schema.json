@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cohort_student_maps",
+  "info": {
+    "singularName": "cohort-student-map",
+    "pluralName": "cohort-student-maps",
+    "displayName": "Cohort Student Map",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regno": {
+      "type": "biginteger",
+      "required": true
+    },
+    "classcode": {
+      "type": "string",
+      "required": true
+    },
+    "classno": {
+      "type": "integer",
+      "required": true
+    },
+    "schoolYear": {
+      "type": "integer",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "defaultTo": "ACTIVE"
+    }
+  }
+}

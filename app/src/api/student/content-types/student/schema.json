@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regno": {
+      "type": "biginteger",
+      "unique": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cname": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F"
+      ],
+      "required": true
+    },
+    "house": {
+      "type": "enumeration",
+      "enum": [
+        "R",
+        "Y",
+        "B",
+        "G"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conducts",
+  "info": {
+    "singularName": "conduct",
+    "pluralName": "conducts",
+    "displayName": "Conduct",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regno": {
+      "type": "biginteger",
+      "required": true,
+      "unique": false
+    },
+    "schoolYear": {
+      "type": "integer",
+      "required": true
+    },
+    "term": {
+      "type": "integer",
+      "required": true
+    },
+    "eventDate": {
+      "type": "date",
+      "required": true
+    },
+    "itemCode": {
+      "type": "integer",
+      "required": true
+    },
+    "mark": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "teacher": {
+      "type": "string",
+      "required": true
+    },
+    "informedAt": {
+      "type": "date"
+    },
+    "isImportFromJournal": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merit_demerits",
+  "info": {
+    "singularName": "merit-demerit",
+    "pluralName": "merit-demerits",
+    "displayName": "MeritDemerit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "regno": {
+      "type": "biginteger",
+      "required": true
+    },
+    "schoolYear": {
+      "type": "integer",
+      "required": true
+    },
+    "term": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "eventDate": {
+      "type": "date",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "MERIT",
+        "DEMERIT",
+        "MINOR_CREDIT",
+        "MAJOR_CREDIT",
+        "MINOR_MISCONDUCT",
+        "SERIOUS_MISCONDUCT"
+      ]
+    },
+    "teacher": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
