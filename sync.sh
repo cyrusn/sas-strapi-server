@@ -22,9 +22,14 @@ ssh root@calp "mkdir -p ~/strapi-app"
 
 echo "Syncing files to $REMOTE_DEST..."
 
-# Copy app.tar, docker-compose.prod.yml, run.sh, and app/.env (renamed to .env)
-scp app.tar docker-compose.yml run.sh root@calp:~/strapi-app/
-scp .env root@calp:~/strapi-app/.env
+# Use rsync to only transfer changed files. 
+# -a: archive mode, -v: verbose, -z: compress, --progress: show progress
+rsync -avz --progress \
+    app.tar \
+    docker-compose.yml \
+    run.sh \
+    .env \
+    root@calp:~/strapi-app/
 
 echo "Successfully synced files to $REMOTE_DEST"
 echo "Next steps on remote machine:"
