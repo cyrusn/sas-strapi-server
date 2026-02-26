@@ -68,7 +68,7 @@ module.exports = createCoreController('api::conduct.conduct', ({ strapi }) => ({
       .count('conducts.id')
       .first()
 
-    console.log(select)
+    strapi.log.debug(select)
 
     const entity = await queryBuilder
       .select(select)

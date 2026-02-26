@@ -26,7 +26,7 @@ module.exports = {
    */
   // bootstrap(/*{ strapi }*/) {},
   async bootstrap({ strapi }) {
-    console.log("bootstraping ...");
+    strapi.log.info("bootstraping ...");
 
     // const { clearDatabase, importData } = require('./bootstrap/seed')
     // await clearDatabase({ strapi })
@@ -35,11 +35,11 @@ module.exports = {
     await up({ strapi });
     await createAttendanceSummaryView({ strapi });
     await createConductSummaryView({ strapi });
-    const result = await updateStudent({ strapi });
-    console.log(result);
+    // const result = await updateStudent({ strapi });
+    // strapi.log.debug(result);
   },
   async destroy({ strapi }) {
-    console.log("destroying ...");
+    strapi.log.info("destroying ...");
 
     await down({ strapi });
   },

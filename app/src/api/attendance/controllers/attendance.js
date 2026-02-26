@@ -52,7 +52,7 @@ module.exports = createCoreController('api::attendance.attendance', ({ strapi })
       'api::cohort-student-map.cohort-student-map',
     ], params)
     const { whereBuilder, orderBy, pagination, select, where } = query
-    console.log(orderBy, pagination, select, where)
+    strapi.log.debug(orderBy, pagination, select, where)
     const { start, limit } = pagination
 
     const queryBuilder = knex('attendances')

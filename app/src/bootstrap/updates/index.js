@@ -8,7 +8,7 @@ module.exports = {
       regno, classcode, classno, school_year, status: 'ACTIVE'
     }))
 
-    console.log(cohortStudentMapData)
+    strapi.log.debug(cohortStudentMapData)
 
     const knex = await strapi.db.connection
 
