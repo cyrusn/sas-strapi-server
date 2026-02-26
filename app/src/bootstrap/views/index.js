@@ -14,12 +14,15 @@ module.exports = {
       )
       .groupBy(['regno', 'school_year', 'term'])
 
-    await knex.schema.createViewOrReplace('attendance_summary', function (view) {
-      view.columns(['regno', 'school_year', 'term']);
-      view.as(
-        attendanceSummaryTable
-      );
-    })
+    const hasAttendanceSummary = await knex.schema.hasTable('attendance_summary');
+    if (!hasAttendanceSummary) {
+      await knex.schema.createViewOrReplace('attendance_summary', function (view) {
+        view.columns(['regno', 'school_year', 'term']);
+        view.as(
+          attendanceSummaryTable
+        );
+      })
+    }
   },
   async createConductSummaryView({ strapi }) {
     const knex = await strapi.db.connection
@@ -40,11 +43,14 @@ module.exports = {
       .groupBy(['regno', 'school_year', 'term'])
 
 
-    await knex.schema.createViewOrReplace('conduct_summary', function (view) {
-      view.columns(['regno', 'school_year']);
-      view.as(
-        conductSummaryTable
-      );
-    })
+    const hasConductSummary = await knex.schema.hasTable('conduct_summary');
+    if (!hasConductSummary) {
+      await knex.schema.createViewOrReplace('conduct_summary', function (view) {
+        view.columns(['regno', 'school_year']);
+        view.as(
+          conductSummaryTable
+        );
+      })
+    }
   }
 }
